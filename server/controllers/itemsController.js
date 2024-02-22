@@ -30,6 +30,10 @@ const getItemByItemName = async (req, res) => {
 const addItem = async (req, res) => {
   try {
     const item = await itemRepository.addItem(req.body);
+    if (item.massage) {
+      throw new 
+      ServerError(item.massage);
+    }
     res.status(201).json(item);
   } catch (error) {
     res.status(400).json({ message: error.message });
