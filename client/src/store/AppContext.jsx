@@ -1,6 +1,6 @@
 import { createContext, useContext, useReducer } from "react";
 
-const URL = "http://localhost:3000/items";
+const URL = "https://emergency-supplies-management-system.onrender.com/items";
 const AppContext = createContext();
 
 export const useAppContext = () => {
